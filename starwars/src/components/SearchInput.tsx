@@ -55,11 +55,11 @@ const SearchInput = () => {
   const searchLego = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (sets && themes) {
-      let searchIndex = sets.findIndex((row) => row.set_id == search);
+      let searchIndex = sets.findIndex((row) => row.set_id === search);
       let setsResult = sets[searchIndex];
       if (setsResult) {
         let themeIndex = themes.findIndex(
-          (row) => row.id == setsResult.theme_id
+          (row) => row.id === setsResult.theme_id
         );
         let themesResult = themes[themeIndex];
         setResult({
